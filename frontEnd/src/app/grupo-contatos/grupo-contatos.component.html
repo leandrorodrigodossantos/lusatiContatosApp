@@ -1,0 +1,26 @@
+<div>
+  <h2>Grupo</h2>
+  <div fxLayout="row">
+    <div fxFlex="50%">
+      <h3>Grupos Disponíveis</h3>
+      <ul>
+        <li *ngFor="let grupo of gruposDisponiveis">
+          {{ grupo.dsGrupocontato }}
+        </li>
+      </ul>
+    </div>
+    <div fxFlex="50%">
+      <h3>Grupos Selecionados</h3>
+      <ul>
+        <li *ngFor="let grupo of gruposSelecionados">
+          {{ grupo.dsGrupocontato }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <button mat-raised-button color="primary" (click)="adicionarGrupo(gruposDisponiveis[0])">Adicionar</button>
+    <button mat-raised-button color="warn" (click)="removerGrupo(gruposSelecionados[0])">Remover</button>
+  </div>
+</div>

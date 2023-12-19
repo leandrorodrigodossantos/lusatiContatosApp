@@ -1,0 +1,33 @@
+// /* Estilos globais */
+// body, html {
+//   margin: 0;
+//   padding: 0;
+//   height: 100%;
+//   font-family: Arial, sans-serif;
+// }
+
+// .app-container {
+//   display: flex;
+//   flex-direction: column;
+//   min-height: 100vh;
+//   overflow: hidden; /* Evita barra de rolagem */
+// }
+
+// .content {
+//   flex-grow: 1;
+//   padding: 20px;
+//   overflow: auto; /* Adiciona rolagem caso o conteúdo seja maior */
+//   background-color: darkgray;
+// }
+
+// /* Estilo para garantir que o rodapé fique no final da página */
+// app-footer {
+//   margin-top: auto;
+// }
+
+// /* Estilos para dispositivos móveis */
+// @media (max-width: 767px) {
+//   .content {
+//     padding: 10px; /* Espaçamento menor para dispositivos móveis */
+//   }
+// }

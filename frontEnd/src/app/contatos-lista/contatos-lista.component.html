@@ -1,0 +1,70 @@
+<div class="main-body">
+
+<app-status-cards></app-status-cards>
+
+  <mat-form-field>
+    <mat-label>Filtros</mat-label>
+    <input matInput (keyup)="aplicarFiltro($event)" placeholder="Ex. Leandro" #input>
+  </mat-form-field>
+
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dsContato">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+        <td mat-cell *matCellDef="let row"> {{row.dsContato}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nrCelular">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Celular </th>
+        <td mat-cell *matCellDef="let row"> {{row.nrCelular}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dsEmail">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let row"> {{row.dsEmail}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="grupocontatoId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Gropo de Contato </th>
+        <td mat-cell *matCellDef="let row"> {{ getDsGrupo(row.grupocontatoId) }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="stAtivo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Situação </th>
+        <td mat-cell *matCellDef="let row" [ngClass]="{'stAtivo': true, 'ativo': row.stAtivo === 1,
+        'inativo': (row.stAtivo === undefined || row.stAtivo === null || row.stAtivo <= 0)}">
+          {{ getDsStAtivo(row.stAtivo) }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button color="primary" (click)="adicionarContato()">
+            <mat-icon>add</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" (click)="editarContato(row)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deletarContato(row.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">Nenhum registro encontrado para o filtro "{{input.value}}"</td>
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Páginação de contatos"></mat-paginator>
+  </div>
+</div>

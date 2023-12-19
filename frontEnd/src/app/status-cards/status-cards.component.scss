@@ -1,0 +1,44 @@
+.card-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  border: 1px solid #ddd;
+  margin: 10px;
+  width: 400px;
+  border-radius: 10px;
+  border: none;
+}
+
+.card-header {
+  background-color: #f0f8ff;
+  padding: 5px;
+}
+
+.card-total-01 {
+  background-color: whitesmoke;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  border-color: black;
+}
+
+.card-total-02 {
+  background-color: #32cd32;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.card-total-03 {
+  background-color: red;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.card-line {
+  background-color: white;
+  height: 1px;
+}

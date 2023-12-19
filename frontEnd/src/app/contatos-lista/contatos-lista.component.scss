@@ -1,0 +1,36 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.main-body {
+  padding-top: 20px;
+  margin: 0 auto;
+  max-width: 1348px;
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.action {
+  display: flex;
+  gap: 5px;
+}
+
+.mat-cell.stAtivo {
+  padding: 8px;
+  border: 1px solid #000;
+  border: 1px solid #000;
+
+}
+
+.ativo {
+  background-color: #00cc0070;
+  color: white;
+  border-radius: 8px;
+}
+
+.inativo {
+  background-color: #ff00007a;
+  color: black;
+  border-radius: 8px;
+}

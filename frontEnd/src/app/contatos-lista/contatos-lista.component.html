@@ -2,6 +2,10 @@
 
 <app-status-cards></app-status-cards>
 
+<div mat-dialog-actions class="action">
+  <button mat-raised-button color="primary" (click)="adicionarContato()">Novo Contato</button>
+</div>
+
   <mat-form-field>
     <mat-label>Filtros</mat-label>
     <input matInput (keyup)="aplicarFiltro($event)" placeholder="Ex. Leandro" #input>
@@ -45,9 +49,6 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
         <td mat-cell *matCellDef="let row">
-          <button mat-icon-button color="primary" matTooltip="Adicionar Contato" (click)="adicionarContato()">
-            <mat-icon>add</mat-icon>
-          </button>
           <button mat-icon-button color="primary" matTooltip="Atualizar Contato" (click)="editarContato(row)">
             <mat-icon>edit</mat-icon>
           </button>

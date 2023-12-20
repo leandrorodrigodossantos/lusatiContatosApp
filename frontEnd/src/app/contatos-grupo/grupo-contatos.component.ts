@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { GrupoContato } from './../persistences/grupo-contato';
-import { GrupoContatoService } from './../services/grupo-contato.service';
+import { GrupoContato } from '../persistences/grupo-contato';
+import { GrupoContatoService } from '../services/grupo-contato.service';
 @Component({
-  selector: 'app-grupo-contatos',
-  templateUrl: './grupo-contatos.component.html',
-  styleUrls: ['./grupo-contatos.component.scss']
+  selector: 'app-contatos-grupo',
+  templateUrl: './contatos-grupo.component.html',
+  styleUrls: ['./contatos-grupo.component.scss']
 })
-export class GrupoContatosComponent {
+export class ContatosGrupoComponent {
 
   grupoSelecionado?: GrupoContato;
   gruposDisponiveis: GrupoContato[] = [];

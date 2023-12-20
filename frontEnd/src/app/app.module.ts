@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { ContatosAddEditComponent } from './contatos/contatos.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -27,22 +26,21 @@ import { ContatosListaComponent } from './contatos-lista/contatos-lista.componen
 import { GrupoContato } from './persistences/grupo-contato';
 import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
-import { GrupoContatosComponent } from './grupo-contatos/grupo-contatos.component';
+import { ContatosGrupoComponent } from './contatos-grupo/grupo-contatos.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { StatusCardsComponent } from './status-cards/status-cards.component';
-import { CadastroContatoComponent } from './cadastro-contato/cadastro-contato.component';
+import { ContatosCadastrosComponent } from './contatos-cadastro/contatos-cadastro.component';
 import { DialogContatosGruposComponent } from './dialog-contatos-grupos/dialog-contatos-grupos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContatosAddEditComponent,
     ContatosListaComponent,
-    GrupoContatosComponent,
+    ContatosGrupoComponent,
     HeaderComponent,
     FooterComponent,
     StatusCardsComponent,
-    CadastroContatoComponent,
+    ContatosCadastrosComponent,
     DialogContatosGruposComponent,
   ],
   imports: [

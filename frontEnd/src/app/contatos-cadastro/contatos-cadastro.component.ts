@@ -1,16 +1,16 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { GrupoContato } from '../persistences/grupo-contato';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { ContatoService } from './../services/contato.service';
+import { ContatoService } from '../services/contato.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { SnackBarService } from './../services/snackbar.service';
+import { SnackBarService } from '../services/snackbar.service';
 
 @Component({
-  selector: 'app-cadastro-contato',
-  templateUrl: './cadastro-contato.component.html',
-  styleUrls: ['./cadastro-contato.component.scss']
+  selector: 'app-contatos-cadastro',
+  templateUrl: './contatos-cadastro.component.html',
+  styleUrls: ['./contatos-cadastro.component.scss']
 })
-export class CadastroContatoComponent implements OnInit {
+export class ContatosCadastrosComponent implements OnInit {
   contatoForm: FormGroup;
 
   stAtivo: { id: number; situacao: string }[] = [
@@ -22,7 +22,7 @@ export class CadastroContatoComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private contatosService: ContatoService,
-    private dialogRef: MatDialogRef<CadastroContatoComponent>,
+    private dialogRef: MatDialogRef<ContatosCadastrosComponent>,
     private snackbarService: SnackBarService,
     @Inject(MAT_DIALOG_DATA) public data: any) {
       this.contatoForm = this.formBuilder.group({

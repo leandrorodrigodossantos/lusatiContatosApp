@@ -3,7 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { ContatosAddEditComponent } from './../contatos/contatos.component';
 import { ContatoService } from './../services/contato.service';
 import { SnackBarService } from './../services/snackbar.service';
 import { GrupoContatoService } from './../services/grupo-contato.service';

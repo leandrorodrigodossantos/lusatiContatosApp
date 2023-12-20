@@ -1,45 +1,59 @@
 import { Component, Input } from '@angular/core';
 import { GrupoContato } from './../persistences/grupo-contato';
 import { GrupoContatoService } from './../services/grupo-contato.service';
-
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-grupo-contatos',
   templateUrl: './grupo-contatos.component.html',
   styleUrls: ['./grupo-contatos.component.scss']
 })
 export class GrupoContatosComponent {
-  grupo?: GrupoContato;
-  public gruposDisponiveis: GrupoContato[] = [];
 
-  @Input()gruposSelecionados: GrupoContato[] = [];
+  grupoSelecionado?: GrupoContato;
+  gruposDisponiveis: GrupoContato[] = [];
 
+  @Input()
+  gruposSelecionados: GrupoContato[] = [];
+
+  @Input()
+  gruposSelecionados2: GrupoContato[] = [];
   constructor(
-    private grupoContatoService: GrupoContatoService
+    private grupoContatoService: GrupoContatoService,
     ) {}
 
   ngOnInit(): void {
     this.getGrupoContatos();
-    //this.contatoForm.patchValue(this.data);
   }
 
   getGrupoContatos() {
+    // this.grupoContatoService.getGrupoContatoAtivos().subscribe(data => {
+    //   this.gruposDisponiveis = data;
+    // });
     this.grupoContatoService.getGrupoContatoAtivos().subscribe(data => {
       this.gruposDisponiveis = data;
+
+      if (this.gruposSelecionados.length > 0) {
+        this.gruposSelecionados.forEach(grupoSelecionado => {
+          this.gruposDisponiveis = this.gruposDisponiveis.filter(grupo => grupo.id !== grupoSelecionado.id);
+        });
+      }
     });
   }
 
-  adicionarGrupo(grupo: GrupoContato | undefined): void {
-    if(this.gruposDisponiveis.length > 0){
-    this.gruposSelecionados.push(grupo!);
-    this.gruposDisponiveis = this.gruposDisponiveis.filter((g) => g !== grupo);
+  selecionarGrupo(grupo: GrupoContato): void {
+    this.grupoSelecionado = grupo;
+  }
+
+  adicionarGrupo(): void {
+    if (this.grupoSelecionado && !this.gruposSelecionados.includes(this.grupoSelecionado)) {
+      this.gruposSelecionados.push(this.grupoSelecionado);
     }
   }
 
-  removerGrupo(grupo: GrupoContato | undefined): void {
-    if(this.gruposSelecionados.length > 0){
-    this.gruposDisponiveis.push(grupo!);
-    this.gruposSelecionados = this.gruposSelecionados.filter((g) => g !== grupo);
+  removerGrupo(): void {
+    if (this.grupoSelecionado) {
+      this.gruposSelecionados = this.gruposSelecionados.filter(g => g !== this.grupoSelecionado);
+      this.grupoSelecionado = undefined;
     }
   }
-
 }

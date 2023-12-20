@@ -5,5 +5,4 @@ export class Contato {
   dsEmail?: string;
   stAtivo?: boolean;
   grupocontatoId?: number;
-  gruposIds?: number;
 }

@@ -45,13 +45,13 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
         <td mat-cell *matCellDef="let row">
-          <button mat-icon-button color="primary" (click)="adicionarContato()">
+          <button mat-icon-button color="primary" matTooltip="Adicionar Contato" (click)="adicionarContato()">
             <mat-icon>add</mat-icon>
           </button>
-          <button mat-icon-button color="primary" (click)="editarContato(row)">
+          <button mat-icon-button color="primary" matTooltip="Atualizar Contato" (click)="editarContato(row)">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-icon-button color="warn" (click)="deletarContato(row.id)">
+          <button mat-icon-button color="warn" matTooltip="Remover Contato" (click)="deletarContato(row.id)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>

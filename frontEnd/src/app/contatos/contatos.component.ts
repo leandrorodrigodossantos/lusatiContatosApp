@@ -35,7 +35,6 @@ export class ContatosAddEditComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    //this.getGrupoContatos();
     this.contatoForm.patchValue(this.data);
   }
 

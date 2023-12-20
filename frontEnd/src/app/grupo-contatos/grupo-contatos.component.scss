@@ -1,0 +1,45 @@
+div {
+  padding: 20px;
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  [fxLayout="row"] {
+    display: flex;
+    gap: 10px;
+
+    [fxFlex="50%"] {
+      width: 50%;
+    }
+  }
+
+  [fxLayout="column"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  button {
+    margin-top: 10px;
+    width: 30px;
+    margin-bottom: 10px;
+    padding-right: 4px;
+  }
+}
+
+li.selected {
+  background-color: #c5e1a5;
+}
+

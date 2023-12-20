@@ -8,6 +8,7 @@ import { ContatoService } from './../services/contato.service';
 import { SnackBarService } from './../services/snackbar.service';
 import { GrupoContatoService } from './../services/grupo-contato.service';
 import { GrupoContato } from './../persistences/grupo-contato';
+import { DialogContatosGruposComponent } from '../dialog-contatos-grupos/dialog-contatos-grupos.component';
 
 @Component({
   selector: 'app-contatos-lista',
@@ -43,7 +44,7 @@ export class ContatosListaComponent {
   }
 
   adicionarContato() {
-    const dialogRef = this.dialog.open(ContatosAddEditComponent);
+    const dialogRef = this.dialog.open(DialogContatosGruposComponent);
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
@@ -90,7 +91,7 @@ export class ContatosListaComponent {
   }
 
   editarContato(data: any) {
-    const dialogRef = this.dialog.open(ContatosAddEditComponent, {
+    const dialogRef = this.dialog.open(DialogContatosGruposComponent, {
       data,
     });
 

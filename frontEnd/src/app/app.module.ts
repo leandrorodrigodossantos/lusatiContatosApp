@@ -31,6 +31,7 @@ import { GrupoContatosComponent } from './grupo-contatos/grupo-contatos.componen
 import { MatTabsModule } from '@angular/material/tabs';
 import { StatusCardsComponent } from './status-cards/status-cards.component';
 import { CadastroContatoComponent } from './cadastro-contato/cadastro-contato.component';
+import { DialogContatosGruposComponent } from './dialog-contatos-grupos/dialog-contatos-grupos.component';
 
 @NgModule({
   declarations: [
@@ -40,9 +41,9 @@ import { CadastroContatoComponent } from './cadastro-contato/cadastro-contato.co
     GrupoContatosComponent,
     HeaderComponent,
     FooterComponent,
-    ContatosAddEditComponent,
     StatusCardsComponent,
     CadastroContatoComponent,
+    DialogContatosGruposComponent,
   ],
   imports: [
     BrowserModule,

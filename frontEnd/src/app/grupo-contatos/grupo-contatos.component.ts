@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { GrupoContato } from './../persistences/grupo-contato';
 import { GrupoContatoService } from './../services/grupo-contato.service';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-grupo-contatos',
   templateUrl: './grupo-contatos.component.html',

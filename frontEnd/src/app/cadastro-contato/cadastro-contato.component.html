@@ -1,1 +1,38 @@
-<p>cadastro-contato works!</p>
+
+  <div>
+    <form [formGroup]="contatoForm" (ngSubmit)="onFormSubmit()">
+      <div mat-dialog-content class="content">
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput type="text" placeholder="Ex. Leandro Santos" formControlName="dsContato">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Celular</mat-label>
+            <input matInput placeholder="Ex. (11)11111-1111" formControlName="nrCelular">
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Ex. test@gmail.com" formControlName="dsEmail">
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Situação</mat-label>
+            <mat-select formControlName="stAtivo">
+              <mat-option *ngFor="let val of stAtivo" [value]="val.id">{{ val.situacao }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancelar</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Atualizar': 'Salvar'}}</button>
+      </div>
+    </form>
+  </div>

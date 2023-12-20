@@ -1,6 +1,6 @@
 <mat-tab-group>
   <mat-tab label="Contato">
-    <div>
+    <!-- <div>
       <form [formGroup]="contatoForm" (ngSubmit)="onFormSubmit()">
         <div mat-dialog-content class="content">
           <div class="row">
@@ -36,7 +36,8 @@
           <button mat-raised-button color="primary" type="submit">{{data ? 'Atualizar': 'Salvar'}}</button>
         </div>
       </form>
-    </div>
+    </div> -->
+    <app-cadastro-contato [gruposSelecionados]="gruposSelecionados"></app-cadastro-contato>
   </mat-tab>
   <mat-tab label="Grupo">
     <app-grupo-contatos [gruposSelecionados]="gruposSelecionados"></app-grupo-contatos>

@@ -26,9 +26,6 @@ export class GrupoContatosComponent {
   }
 
   getGrupoContatos() {
-    // this.grupoContatoService.getGrupoContatoAtivos().subscribe(data => {
-    //   this.gruposDisponiveis = data;
-    // });
     this.grupoContatoService.getGrupoContatoAtivos().subscribe(data => {
       this.gruposDisponiveis = data;
 

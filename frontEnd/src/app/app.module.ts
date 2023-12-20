@@ -30,6 +30,7 @@ import { FormsModule } from '@angular/forms';
 import { GrupoContatosComponent } from './grupo-contatos/grupo-contatos.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { StatusCardsComponent } from './status-cards/status-cards.component';
+import { CadastroContatoComponent } from './cadastro-contato/cadastro-contato.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { StatusCardsComponent } from './status-cards/status-cards.component';
     FooterComponent,
     ContatosAddEditComponent,
     StatusCardsComponent,
+    CadastroContatoComponent,
   ],
   imports: [
     BrowserModule,
